@@ -1,0 +1,34 @@
+{
+  "common": {
+    "all": "All",
+    "search": "Search",
+    "edit": "Edit",
+    "delete": "Delete",
+    "cancel": "Cancel",
+    "save": "Save",
+    "close": "Close",
+    "actions": "Actions",
+    "labelRowsPerPage": "Rows per page:"
+  },
+  "error": {
+    "PASSWORD_ERROR": "Incorrect password",
+    "ACCOUNT_NOT_FOUND": "Account not found",
+    "ACCOUNT_LOCKED": "Account is locked",
+    "ALREADY_EXISTS": "Username already exists",
+    "UNKNOWN_ERROR": "Unknown error",
+    "USER_NOT_LOGIN": "User is not logged in",
+    "CATEGORY_BE_RELATED_BY_SETMEAL": "This category is linked to set meals and cannot be deleted",
+    "CATEGORY_BE_RELATED_BY_DISH": "This category is linked to dishes and cannot be deleted",
+    "SHOPPING_CART_IS_NULL": "Shopping cart is empty and the order cannot be placed",
+    "ADDRESS_BOOK_IS_NULL": "User address is empty and the order cannot be placed",
+    "LOGIN_FAILED": "Login failed",
+    "UPLOAD_FAILED": "File upload failed",
+    "SETMEAL_ENABLE_FAILED": "The set meal contains dishes that are not on sale",
+    "PASSWORD_EDIT_FAILED": "Failed to change password",
+    "DISH_ON_SALE": "Dishes on sale cannot be deleted",
+    "SETMEAL_ON_SALE": "Set meals on sale cannot be deleted",
+    "DISH_BE_RELATED_BY_SETMEAL": "This dish is linked to a set meal and cannot be deleted",
+    "ORDER_STATUS_ERROR": "Invalid order status",
+    "ORDER_NOT_FOUND": "Order not found"
+  }
+}
