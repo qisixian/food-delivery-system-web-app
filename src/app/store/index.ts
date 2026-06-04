@@ -1,9 +1,11 @@
 // src/store/index.ts
 import { configureStore } from "@reduxjs/toolkit";
+import authReducer from "./authSlice";
 
 export const store = configureStore({
-    reducer: {
-    },
+  reducer: {
+    auth: authReducer,
+  },
 });
 
 // 把从redux里读取数据（store.getState）封装成类型，用来实现自动推断类型

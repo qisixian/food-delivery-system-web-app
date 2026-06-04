@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  /* 字体家族 */
+  /*--font-sans: "Inter", system-ui, sans-serif;*/
+  /*--font-display: "Poppins", sans-serif;*/
+  /*--font-mono: "JetBrains Mono", monospace;*/
+
+  --color-bg: oklch(98% 0.001 106.423);
+  --color-fg: oklch(20% 0 0);
+  --color-on-base: oklch(20% 0 0);
+  --color-base-100: oklch(100% 0 0);
+  --color-base-200: oklch(97% 0 0);
+  --color-base-300: oklch(92% 0 0);
+  --color-primary: oklch(85% 0.199 91.936);
+  --color-on-primary: oklch(42% 0.095 57.708);
+
+  --color-caption: var(--color-gray-500);
+
+  --color-secondary: oklch(70% 0.015 286.067);
+  --color-on-secondary: oklch(14% 0.005 285.823);
+  --color-accent: oklch(67% 0.182 276.935);
+  --color-on-accent: oklch(25% 0.09 281.288);
+  /*--color-secondary: oklch(75% 0.183 55.934);*/
+  /*--color-secondary-content: oklch(40% 0.123 38.172);*/
+  /*--color-accent: oklch(0% 0 0);*/
+  /*--color-accent-content: oklch(100% 0 0);*/
+
+  --color-neutral: oklch(37% 0.01 67.558);
+  --color-on-neutral: oklch(92% 0.003 48.717);
+
+  --color-info: oklch(74% 0.16 232.661);
+  --color-on-info: oklch(39% 0.09 240.876);
+  --color-success: oklch(76% 0.177 163.223);
+  --color-on-success: oklch(37% 0.077 168.94);
+  --color-warning: oklch(82% 0.189 84.429);
+  --color-on-warning: oklch(41% 0.112 45.904);
+  --color-error: oklch(70% 0.191 22.216);
+  --color-on-error: oklch(39% 0.141 25.723);
+}
+
+@layer components {
+  .text-title {
+    @apply text-xl;
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-on-base);
+  }
+
+  .text-body {
+    @apply text-base;
+    color: var(--color-on-base);
+  }
+
+  .text-caption {
+    @apply text-sm;
+    color: var(--color-caption);
+  }
+
+  .button-primary {
+    @apply bg-primary text-on-primary px-2 py-1 rounded-full;
+  }
+
+  .card-padding {
+    @apply p-4;
+  }
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+:root {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

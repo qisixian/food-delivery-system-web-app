@@ -84,6 +84,86 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/admin/order/rejection": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put: operations["order_rejection"];
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/admin/order/delivery/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put: operations["order_delivery"];
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/admin/order/confirm": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put: operations["order_confirm"];
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/admin/order/complete/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put: operations["order_complete"];
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/admin/order/cancel": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put: operations["order_complete_1"];
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/admin/employee": {
         parameters: {
             query?: never;
@@ -142,6 +222,22 @@ export interface paths {
         get?: never;
         put?: never;
         post: operations["user_user_login"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/user/shoppingCart/sub": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["user_shoppingCart_sub"];
         delete?: never;
         options?: never;
         head?: never;
@@ -292,6 +388,22 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/user/user/me": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["user_user_me"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/user/shoppingCart/list": {
         parameters: {
             query?: never;
@@ -356,6 +468,22 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/user/order/{orderNumber}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["user_order_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/user/order/reminder/{id}": {
         parameters: {
             query?: never;
@@ -364,6 +492,22 @@ export interface paths {
             cookie?: never;
         };
         get: operations["user_order_reminder"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/user/order/list": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["user_order_list"];
         put?: never;
         post?: never;
         delete?: never;
@@ -396,6 +540,38 @@ export interface paths {
             cookie?: never;
         };
         get: operations["user_category_list"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/user/auth/google/login": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["user_googleAuth_googleLogin"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/user/auth/google/callback": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["user_googleAuth_googleCallback"];
         put?: never;
         post?: never;
         delete?: never;
@@ -628,6 +804,54 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/admin/order/statistics": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["order_statistics"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/admin/order/details/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["order_getById"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/admin/order/conditionSearch": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["order_page"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/admin/employee/{id}": {
         parameters: {
             query?: never;
@@ -796,19 +1020,19 @@ export interface components {
             id?: number;
             /** Format: int64 */
             userId?: number;
-            consignee?: string;
-            phone?: string;
-            sex?: string;
+            consignee: string;
+            phone: string;
+            sex: string;
             provinceCode?: string;
-            provinceName?: string;
+            provinceName: string;
             cityCode?: string;
-            cityName?: string;
+            cityName: string;
             districtCode?: string;
             districtName?: string;
-            detail?: string;
+            detail: string;
             label?: string;
             /** Format: int32 */
-            isDefault?: number;
+            isDefault: number;
         };
         Result: components["schemas"]["ResultBase"] & {
             data?: unknown;
@@ -838,6 +1062,22 @@ export interface components {
             /** Format: int32 */
             copies: number;
         };
+        OrdersRejectionDTO: {
+            /** Format: int64 */
+            id?: number;
+            rejectionReason?: string;
+        };
+        OrdersConfirmDTO: {
+            /** Format: int64 */
+            id?: number;
+            /** Format: int32 */
+            status?: number;
+        };
+        OrdersCancelDTO: {
+            /** Format: int64 */
+            id?: number;
+            cancelReason?: string;
+        };
         EmployeeDTO: {
             /** Format: int64 */
             id?: number;
@@ -865,11 +1105,11 @@ export interface components {
         };
         DishFlavor: {
             /** Format: int64 */
-            id?: number;
+            id: number;
             /** Format: int64 */
-            dishId?: number;
-            name?: string;
-            value?: string;
+            dishId: number;
+            name: string;
+            value: string;
         };
         CategoryDTO: {
             /** Format: int64 */
@@ -978,23 +1218,23 @@ export interface components {
         };
         Setmeal: {
             /** Format: int64 */
-            id?: number;
+            id: number;
             /** Format: int64 */
-            categoryId?: number;
-            name?: string;
-            price?: number;
+            categoryId: number;
+            name: string;
+            price: number;
             /** Format: int32 */
-            status?: number;
-            description?: string;
-            image?: string;
+            status: number;
+            description: string;
+            image: string;
             /** Format: date-time */
-            createTime?: string;
+            createTime: string;
             /** Format: date-time */
-            updateTime?: string;
+            updateTime: string;
             /** Format: int64 */
-            createUser?: number;
+            createUser: number;
             /** Format: int64 */
-            updateUser?: number;
+            updateUser: number;
         };
         DishItemVO: {
             name?: string;
@@ -1005,6 +1245,71 @@ export interface components {
         };
         ResultListDishItemVO: components["schemas"]["ResultBase"] & {
             data?: components["schemas"]["DishItemVO"][];
+        };
+        OrderDetail: {
+            /** Format: int64 */
+            id?: number;
+            name?: string;
+            /** Format: int64 */
+            orderId?: number;
+            /** Format: int64 */
+            dishId?: number;
+            /** Format: int64 */
+            setmealId?: number;
+            dishFlavor?: string;
+            /** Format: int32 */
+            number?: number;
+            amount?: number;
+            image?: string;
+        };
+        OrderVO: {
+            /** Format: int64 */
+            id?: number;
+            number?: string;
+            /** Format: int32 */
+            status: number;
+            /** Format: int64 */
+            userId?: number;
+            /** Format: int64 */
+            addressBookId?: number;
+            /** Format: date-time */
+            orderTime: string;
+            /** Format: date-time */
+            checkoutTime?: string;
+            /** Format: int32 */
+            payMethod?: number;
+            /** Format: int32 */
+            payStatus: number;
+            amount: number;
+            remark?: string;
+            userName?: string;
+            phone?: string;
+            address?: string;
+            consignee?: string;
+            cancelReason?: string;
+            rejectionReason?: string;
+            /** Format: date-time */
+            cancelTime?: string;
+            /** Format: date-time */
+            estimatedDeliveryTime?: string;
+            /** Format: int32 */
+            deliveryStatus?: number;
+            /** Format: date-time */
+            deliveryTime?: string;
+            /** Format: int32 */
+            packAmount?: number;
+            /** Format: int32 */
+            tablewareNumber?: number;
+            /** Format: int32 */
+            tablewareStatus?: number;
+            orderDishes?: string;
+            orderDetailList?: components["schemas"]["OrderDetail"][];
+        };
+        ResultOrderVO: components["schemas"]["ResultBase"] & {
+            data?: components["schemas"]["OrderVO"];
+        };
+        ResultListOrderVO: components["schemas"]["ResultBase"] & {
+            data?: components["schemas"]["OrderVO"][];
         };
         DishVO: {
             /** Format: int64 */
@@ -1174,6 +1479,82 @@ export interface components {
         };
         ResultOrderReportVO: components["schemas"]["ResultBase"] & {
             data?: components["schemas"]["OrderReportVO"];
+        };
+        OrderStatisticsVO: {
+            /** Format: int32 */
+            toBeConfirmed?: number;
+            /** Format: int32 */
+            confirmed?: number;
+            /** Format: int32 */
+            deliveryInProgress?: number;
+        };
+        ResultOrderStatisticsVO: components["schemas"]["ResultBase"] & {
+            data?: components["schemas"]["OrderStatisticsVO"];
+        };
+        OrdersPageQueryDTO: {
+            /** Format: int32 */
+            page?: number;
+            /** Format: int32 */
+            pageSize?: number;
+            number?: string;
+            phone?: string;
+            /** Format: int32 */
+            status?: number;
+            /** Format: date-time */
+            beginTime?: string;
+            /** Format: date-time */
+            endTime?: string;
+            /** Format: int64 */
+            userId?: number;
+        };
+        Orders: {
+            /** Format: int64 */
+            id?: number;
+            number?: string;
+            /** Format: int32 */
+            status: number;
+            /** Format: int64 */
+            userId?: number;
+            /** Format: int64 */
+            addressBookId?: number;
+            /** Format: date-time */
+            orderTime: string;
+            /** Format: date-time */
+            checkoutTime?: string;
+            /** Format: int32 */
+            payMethod?: number;
+            /** Format: int32 */
+            payStatus: number;
+            amount: number;
+            remark?: string;
+            userName?: string;
+            phone?: string;
+            address?: string;
+            consignee?: string;
+            cancelReason?: string;
+            rejectionReason?: string;
+            /** Format: date-time */
+            cancelTime?: string;
+            /** Format: date-time */
+            estimatedDeliveryTime?: string;
+            /** Format: int32 */
+            deliveryStatus?: number;
+            /** Format: date-time */
+            deliveryTime?: string;
+            /** Format: int32 */
+            packAmount?: number;
+            /** Format: int32 */
+            tablewareNumber?: number;
+            /** Format: int32 */
+            tablewareStatus?: number;
+        };
+        PageResultOrders: {
+            /** Format: int64 */
+            total: number;
+            records: components["schemas"]["Orders"][];
+        };
+        ResultPageResultOrders: components["schemas"]["ResultBase"] & {
+            data?: components["schemas"]["PageResultOrders"];
         };
         Employee: {
             /** Format: int64 */
@@ -1519,6 +1900,122 @@ export interface operations {
             };
         };
     };
+    order_rejection: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["OrdersRejectionDTO"];
+            };
+        };
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["Result"];
+                };
+            };
+        };
+    };
+    order_delivery: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                id: number;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["Result"];
+                };
+            };
+        };
+    };
+    order_confirm: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["OrdersConfirmDTO"];
+            };
+        };
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["Result"];
+                };
+            };
+        };
+    };
+    order_complete: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                id: number;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["Result"];
+                };
+            };
+        };
+    };
+    order_complete_1: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["OrdersCancelDTO"];
+            };
+        };
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["Result"];
+                };
+            };
+        };
+    };
     employee_update: {
         parameters: {
             query?: never;
@@ -1727,6 +2224,30 @@ export interface operations {
                 };
                 content: {
                     "*/*": components["schemas"]["ResultUserLoginVO"];
+                };
+            };
+        };
+    };
+    user_shoppingCart_sub: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ShoppingCartDTO"];
+            };
+        };
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["Result"];
                 };
             };
         };
@@ -1941,6 +2462,26 @@ export interface operations {
             };
         };
     };
+    user_user_me: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["Result"];
+                };
+            };
+        };
+    };
     user_shoppingCart_list: {
         parameters: {
             query?: never;
@@ -2025,6 +2566,28 @@ export interface operations {
             };
         };
     };
+    user_order_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                orderNumber: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["ResultOrderVO"];
+                };
+            };
+        };
+    };
     user_order_reminder: {
         parameters: {
             query?: never;
@@ -2043,6 +2606,26 @@ export interface operations {
                 };
                 content: {
                     "*/*": components["schemas"]["Result"];
+                };
+            };
+        };
+    };
+    user_order_list: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["ResultListOrderVO"];
                 };
             };
         };
@@ -2071,8 +2654,8 @@ export interface operations {
     };
     user_category_list: {
         parameters: {
-            query: {
-                type: number;
+            query?: {
+                type?: number;
             };
             header?: never;
             path?: never;
@@ -2087,6 +2670,46 @@ export interface operations {
                 };
                 content: {
                     "*/*": components["schemas"]["ResultListCategory"];
+                };
+            };
+        };
+    };
+    user_googleAuth_googleLogin: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["ResultString"];
+                };
+            };
+        };
+    };
+    user_googleAuth_googleCallback: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["ResultString"];
                 };
             };
         };
@@ -2384,6 +3007,70 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content?: never;
+            };
+        };
+    };
+    order_statistics: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["ResultOrderStatisticsVO"];
+                };
+            };
+        };
+    };
+    order_getById: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                id: number;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["ResultOrderVO"];
+                };
+            };
+        };
+    };
+    order_page: {
+        parameters: {
+            query: {
+                ordersPageQueryDTO: components["schemas"]["OrdersPageQueryDTO"];
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["ResultPageResultOrders"];
+                };
             };
         };
     };
