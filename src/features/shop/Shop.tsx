@@ -338,7 +338,11 @@ function Shop() {
               <div className="space-y-4">
                 {menuItems.map((item) => (
                   <div className="flex gap-3" key={item.id}>
-                    <div className="h-20 w-20 rounded-lg bg-gray-200" />
+                    <img
+                      src={import.meta.env.VITE_IMAGE_BASE_URL + "/" + item.image}
+                      alt={item.name}
+                      className="h-20 w-20 rounded-lg object-cover"
+                    />
                     <div className="min-w-0 flex-1">
                       <div className="text-body font-medium">{item.name}</div>
                       <div className="mt-1 text-caption line-clamp-2">{item.description}</div>
@@ -484,7 +488,11 @@ function Shop() {
             <div className="mt-3 space-y-4 overflow-y-auto flex-1">
               {cart.items.map((item) => (
                 <div className="flex gap-3" key={item.id}>
-                  <div className="h-20 w-20 rounded-lg bg-gray-200" />
+                  <img
+                    src={import.meta.env.VITE_IMAGE_BASE_URL + "/" + item.image}
+                    alt={item.name}
+                    className="h-20 w-20 rounded-lg object-cover"
+                  />
                   <div className="flex flex-col flex-1 min-w-0 justify-between">
                     <div className="font-medium">{item.name}</div>
                     <div className="mt-1 text-caption line-clamp-2">{item.dishFlavor}</div>

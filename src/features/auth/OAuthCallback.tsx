@@ -2,23 +2,22 @@ import { useEffect } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { store } from "@/app/store";
 import { setToken, setUserId } from "@/app/store/authSlice";
+import { enqueueSnackbar } from "notistack";
 
 export default function OAuthCallback() {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
 
-  // const id = searchParams.get("id");
-  // const token = searchParams.get("token");
-
   useEffect(() => {
-    // const id = searchParams.get("id");
     const token = searchParams.get("token");
     const userId = searchParams.get("id");
+    const error = searchParams.get("error");
 
-    // if (!token) {
-    //     navigate("/login");
-    //     return;
-    // }
+    if (error) {
+      navigate("/login");
+      enqueueSnackbar(error, { variant: "error" });
+      return;
+    }
     if (token) {
       store.dispatch(setToken(token));
     }

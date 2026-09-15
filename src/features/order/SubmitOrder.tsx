@@ -189,7 +189,11 @@ function SubmitOrder() {
               //     <div>¥{price * count}</div>
               // </div>
               <div className="flex gap-3" key={item.id}>
-                <div className="h-14 w-14 rounded-lg bg-gray-200" />
+                <img
+                  src={import.meta.env.VITE_IMAGE_BASE_URL + "/" + item.image}
+                  alt={item.name}
+                  className="h-14 w-14 rounded-lg object-cover"
+                />
                 <div className="flex flex-col flex-1 min-w-0 justify-between">
                   <div className="flex gap-3 items-center">
                     <div className="">{item.name}</div>

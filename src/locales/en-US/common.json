@@ -101,6 +101,7 @@
     "ALREADY_EXISTS": "Username already exists",
     "UNKNOWN_ERROR": "Unknown error",
     "USER_NOT_LOGIN": "User is not logged in",
+    "UNAUTHENTICATED": "User is not logged in",
     "CATEGORY_BE_RELATED_BY_SETMEAL": "This category is linked to set meals and cannot be deleted",
     "CATEGORY_BE_RELATED_BY_DISH": "This category is linked to dishes and cannot be deleted",
     "SHOPPING_CART_IS_NULL": "Shopping cart is empty and the order cannot be placed",

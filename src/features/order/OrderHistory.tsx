@@ -55,11 +55,28 @@ function OrderHistory() {
               }}
             >
               <div className="flex justify-between">
-                <div>{t("common.orderTime")}: {order.orderTime}</div>
+                <div>
+                  {t("common.orderTime")}: {order.orderTime}
+                </div>
                 <div>{t(`enums.orderStatus.${OrderStatusI18nKeyMap[order.status]}`)}</div>
               </div>
               <div className="flex">
-                <div className="h-14 w-14 rounded-lg bg-gray-200" />
+                <div className="flex gap-4">
+                  {order.orderDetailList && order.orderDetailList.length > 0 ? (
+                    order.orderDetailList
+                      .slice(0, 3)
+                      .map((item) => (
+                        <img
+                          key={item.id}
+                          src={`${import.meta.env.VITE_IMAGE_BASE_URL}/${item.image}`}
+                          alt={item.name}
+                          className="h-14 w-14 rounded-lg object-cover"
+                        />
+                      ))
+                  ) : (
+                    <div className="h-14 w-14 rounded-lg bg-gray-200" />
+                  )}
+                </div>
                 <div className="flex flex-col flex-1 min-w-0 justify-between">
                   <div className="flex gap-3 items-center">
                     <div className="">{order.orderDishes}</div>

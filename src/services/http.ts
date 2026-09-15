@@ -31,7 +31,7 @@ http.interceptors.response.use(
     if (res.data.code !== 1) {
       enqueueSnackbar(t(`error.${res.data.msg}`), { variant: "error" });
       console.error(res.data.message);
-      if (res.data.msg === "USER_NOT_LOGIN") logout();
+      if (res.data.msg === "UNAUTHENTICATED") logout();
     }
     return res.data;
   },
