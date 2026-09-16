@@ -53,14 +53,14 @@ export const fetchDefaultAddress = () => {
   });
 };
 
-export const setDefaultAddress = (params: ApiRequestBody<"/user/addressBook/default", "put">) => {
+export const setDefaultAddress = (params: ApiQuery<"/user/addressBook/default", "put">) => {
   return request<
     ApiResponseData<"/user/addressBook/default", "put">,
-    ApiRequestBody<"/user/addressBook/default", "put">,
-    never
+    never,
+    ApiQuery<"/user/addressBook/default", "put">
   >({
     url: "/user/addressBook/default",
     method: "put",
-    data: { ...params },
+    params,
   });
 };

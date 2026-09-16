@@ -356,22 +356,6 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
-    "/admin/common/upload": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        post: operations["common_upload"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
     "/admin/category/status/{status}": {
         parameters: {
             query?: never;
@@ -980,22 +964,6 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
-    "/notify/paySuccess": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["payNotify_paySuccessNotify"];
-        put: operations["payNotify_paySuccessNotify_2"];
-        post: operations["payNotify_paySuccessNotify_1"];
-        delete: operations["payNotify_paySuccessNotify_3"];
-        options: operations["payNotify_paySuccessNotify_6"];
-        head: operations["payNotify_paySuccessNotify_5"];
-        patch: operations["payNotify_paySuccessNotify_4"];
-        trace?: never;
-    };
 }
 export type webhooks = Record<string, never>;
 export interface components {
@@ -1034,7 +1002,7 @@ export interface components {
             /** Format: int32 */
             isDefault: number;
         };
-        Result: components["schemas"]["ResultBase"] & {
+        ResultVoid: components["schemas"]["ResultBase"] & {
             data?: unknown;
         };
         SetmealDTO: {
@@ -1078,9 +1046,9 @@ export interface components {
             id?: number;
             cancelReason?: string;
         };
-        EmployeeDTO: {
+        EmployeeUpdateDTO: {
             /** Format: int64 */
-            id?: number;
+            id: number;
             username?: string;
             name?: string;
             phone?: string;
@@ -1168,12 +1136,19 @@ export interface components {
         ResultOrderSubmitVO: components["schemas"]["ResultBase"] & {
             data?: components["schemas"]["OrderSubmitVO"];
         };
+        EmployeeCreateDTO: {
+            username: string;
+            name: string;
+            phone: string;
+            sex: string;
+            idNumber: string;
+        };
         /** @description 员工登录时传递的数据模型 */
         EmployeeLoginDTO: {
             /** @description 用户名 */
-            username?: string;
+            username: string;
             /** @description 密码 */
-            password?: string;
+            password: string;
         };
         /** @description 员工登录返回的数据格式 */
         EmployeeLoginVO: {
@@ -1212,6 +1187,10 @@ export interface components {
             image?: string;
             /** Format: date-time */
             createTime?: string;
+        };
+        ResultInteger: components["schemas"]["ResultBase"] & {
+            /** Format: int32 */
+            data?: number;
         };
         ResultListSetmeal: components["schemas"]["ResultBase"] & {
             data?: components["schemas"]["Setmeal"][];
@@ -1713,7 +1692,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "*/*": components["schemas"]["Result"];
+                    "*/*": components["schemas"]["ResultVoid"];
                 };
             };
         };
@@ -1737,7 +1716,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "*/*": components["schemas"]["Result"];
+                    "*/*": components["schemas"]["ResultVoid"];
                 };
             };
         };
@@ -1759,7 +1738,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "*/*": components["schemas"]["Result"];
+                    "*/*": components["schemas"]["ResultVoid"];
                 };
             };
         };
@@ -1786,16 +1765,14 @@ export interface operations {
     };
     user_addressBook_setDefault: {
         parameters: {
-            query?: never;
+            query: {
+                id: number;
+            };
             header?: never;
             path?: never;
             cookie?: never;
         };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["AddressBook"];
-            };
-        };
+        requestBody?: never;
         responses: {
             /** @description OK */
             200: {
@@ -1803,7 +1780,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "*/*": components["schemas"]["Result"];
+                    "*/*": components["schemas"]["ResultVoid"];
                 };
             };
         };
@@ -1825,7 +1802,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "*/*": components["schemas"]["Result"];
+                    "*/*": components["schemas"]["ResultVoid"];
                 };
             };
         };
@@ -1849,7 +1826,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "*/*": components["schemas"]["Result"];
+                    "*/*": components["schemas"]["ResultVoid"];
                 };
             };
         };
@@ -1873,7 +1850,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "*/*": components["schemas"]["Result"];
+                    "*/*": components["schemas"]["ResultVoid"];
                 };
             };
         };
@@ -1895,7 +1872,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "*/*": components["schemas"]["Result"];
+                    "*/*": components["schemas"]["ResultVoid"];
                 };
             };
         };
@@ -1919,7 +1896,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "*/*": components["schemas"]["Result"];
+                    "*/*": components["schemas"]["ResultVoid"];
                 };
             };
         };
@@ -1941,7 +1918,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "*/*": components["schemas"]["Result"];
+                    "*/*": components["schemas"]["ResultVoid"];
                 };
             };
         };
@@ -1965,7 +1942,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "*/*": components["schemas"]["Result"];
+                    "*/*": components["schemas"]["ResultVoid"];
                 };
             };
         };
@@ -1987,7 +1964,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "*/*": components["schemas"]["Result"];
+                    "*/*": components["schemas"]["ResultVoid"];
                 };
             };
         };
@@ -2011,7 +1988,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "*/*": components["schemas"]["Result"];
+                    "*/*": components["schemas"]["ResultVoid"];
                 };
             };
         };
@@ -2025,7 +2002,7 @@ export interface operations {
         };
         requestBody: {
             content: {
-                "application/json": components["schemas"]["EmployeeDTO"];
+                "application/json": components["schemas"]["EmployeeUpdateDTO"];
             };
         };
         responses: {
@@ -2049,7 +2026,7 @@ export interface operations {
         };
         requestBody: {
             content: {
-                "application/json": components["schemas"]["EmployeeDTO"];
+                "application/json": components["schemas"]["EmployeeCreateDTO"];
             };
         };
         responses: {
@@ -2059,7 +2036,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "*/*": components["schemas"]["Result"];
+                    "*/*": components["schemas"]["ResultVoid"];
                 };
             };
         };
@@ -2083,7 +2060,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "*/*": components["schemas"]["Result"];
+                    "*/*": components["schemas"]["ResultVoid"];
                 };
             };
         };
@@ -2107,7 +2084,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "*/*": components["schemas"]["Result"];
+                    "*/*": components["schemas"]["ResultVoid"];
                 };
             };
         };
@@ -2129,7 +2106,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "*/*": components["schemas"]["Result"];
+                    "*/*": components["schemas"]["ResultVoid"];
                 };
             };
         };
@@ -2247,7 +2224,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "*/*": components["schemas"]["Result"];
+                    "*/*": components["schemas"]["ResultVoid"];
                 };
             };
         };
@@ -2271,7 +2248,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "*/*": components["schemas"]["Result"];
+                    "*/*": components["schemas"]["ResultVoid"];
                 };
             };
         };
@@ -2416,28 +2393,6 @@ export interface operations {
             };
         };
     };
-    common_upload: {
-        parameters: {
-            query: {
-                file: string;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "*/*": components["schemas"]["ResultString"];
-                };
-            };
-        };
-    };
     category_startOrStop: {
         parameters: {
             query: {
@@ -2477,7 +2432,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "*/*": components["schemas"]["Result"];
+                    "*/*": components["schemas"]["ResultVoid"];
                 };
             };
         };
@@ -2517,7 +2472,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "*/*": components["schemas"]["Result"];
+                    "*/*": components["schemas"]["ResultInteger"];
                 };
             };
         };
@@ -2605,7 +2560,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "*/*": components["schemas"]["Result"];
+                    "*/*": components["schemas"]["ResultVoid"];
                 };
             };
         };
@@ -2688,18 +2643,22 @@ export interface operations {
                 headers: {
                     [name: string]: unknown;
                 };
-                content: {
-                    "*/*": components["schemas"]["ResultString"];
-                };
+                content?: never;
             };
         };
     };
     user_googleAuth_googleCallback: {
         parameters: {
-            query?: never;
+            query?: {
+                code?: string;
+                state?: string;
+                error?: string;
+            };
             header?: never;
             path?: never;
-            cookie?: never;
+            cookie?: {
+                google_oauth_state?: string;
+            };
         };
         requestBody?: never;
         responses: {
@@ -2708,9 +2667,7 @@ export interface operations {
                 headers: {
                     [name: string]: unknown;
                 };
-                content: {
-                    "*/*": components["schemas"]["ResultString"];
-                };
+                content?: never;
             };
         };
     };
@@ -2851,7 +2808,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "*/*": components["schemas"]["Result"];
+                    "*/*": components["schemas"]["ResultInteger"];
                 };
             };
         };
@@ -3243,134 +3200,8 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "*/*": components["schemas"]["Result"];
+                    "*/*": components["schemas"]["ResultVoid"];
                 };
-            };
-        };
-    };
-    payNotify_paySuccessNotify: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
-    };
-    payNotify_paySuccessNotify_2: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
-    };
-    payNotify_paySuccessNotify_1: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
-    };
-    payNotify_paySuccessNotify_3: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
-    };
-    payNotify_paySuccessNotify_6: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
-    };
-    payNotify_paySuccessNotify_5: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
-    };
-    payNotify_paySuccessNotify_4: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description OK */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
             };
         };
     };

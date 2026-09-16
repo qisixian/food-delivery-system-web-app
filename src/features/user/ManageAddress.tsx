@@ -5,10 +5,9 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Pencil } from "lucide-react";
 import { Check } from "lucide-react";
-import {useTranslation} from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 function ManageAddress() {
-
   const { t } = useTranslation();
 
   const navigate = useNavigate();
@@ -32,9 +31,9 @@ function ManageAddress() {
     }
   };
 
-  const handleSetDefaultAddress = async (address: Address) => {
+  const handleSetDefaultAddress = async (id: number) => {
     try {
-      const response = await setDefaultAddress(address);
+      const response = await setDefaultAddress({ id: id });
       console.log("set default address response:", response);
       if (response.code === 1) {
         console.log("successfully set default address");
@@ -104,7 +103,7 @@ function ManageAddress() {
                   className="sr-only"
                   checked={address.isDefault === IsDefault.True}
                   onChange={async () => {
-                    await handleSetDefaultAddress(address);
+                    await handleSetDefaultAddress(address.id!);
                     await loadAddress();
                   }}
                 />
